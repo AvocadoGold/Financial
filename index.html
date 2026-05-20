@@ -1,285 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avocado Gold Terminal v5.2</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #FDFBF7;
-            color: #2C3E50;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avocado Gold Terminal v5.2</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #FDFBF7;
+      color: #2C3E50;
+    }
 
-        /* SOLID DEEP POLISHED FOREST GREEN BLOCK */
-        .hero {
-            background-color: #0B2512;
-            padding: 90px 20px;
-            text-align: center;
-            border-bottom: 6px solid #D4AF37;
-        }
+    /* SOLID DEEP POLISHED FOREST GREEN BLOCK */
+    .hero {
+      background-color: #0B2512;
+      padding: 90px 20px;
+      text-align: center;
+      border-bottom: 6px solid #D4AF37;
+    }
 
-        /* SOLID REAL GOLD METALLIC TEXT */
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 900;
-            margin: 15px 0;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #FFD700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
+    /* SOLID REAL GOLD METALLIC TEXT */
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      margin: 15px 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #FFD700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
 
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 850px;
-            margin: 25px auto;
-            font-weight: 400;
-            color: #FFFFFF;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-        }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 850px;
+      margin: 25px auto;
+      font-weight: 400;
+      color: #FFFFFF;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
 
-        /* SOLID GLOWING GOLD CTA BUTTON */
-        .cta-button {
-            display: inline-block;
-            background-color: #FFD700;
-            color: #0B2512;
-            padding: 18px 45px;
-            font-size: 1.25rem;
-            font-weight: 800;
-            text-decoration: none;
-            border-radius: 50px;
-            text-transform: uppercase;
-            border: 2px solid #FFE57F;
-            box-shadow: 0 0 15px #FFD700, 0 4px 10px rgba(0,0,0,0.3);
-        }
+    /* SOLID GLOWING GOLD CTA BUTTON */
+    .cta-button {
+      display: inline-block;
+      background-color: #FFD700;
+      color: #0B2512;
+      padding: 18px 45px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 50px;
+      text-transform: uppercase;
+      border: 2px solid #FFE57F;
+      box-shadow: 0 0 15px #FFD700, 0 4px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
 
-        .cta-button:hover {
-            background-color: #FFE57F;
-            box-shadow: 0 0 25px #FFD700;
-        }
+    .cta-button:hover {
+      background-color: #FFE57F;
+      box-shadow: 0 0 25px #FFD700;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
 
-        .grid-2 {
-            display: flex;
-            flex-direction: row;
-            gap: 50px;
-            align-items: center;
-        }
+    .grid-2 {
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+      align-items: center;
+    }
 
-        .grid-text { width: 50%; }
-        .grid-chart { width: 50%; }
+    .grid-text {
+      width: 50%;
+    }
 
-        @media (max-width: 768px) {
-            .grid-2 { flex-direction: column; }
-            .grid-text { width: 100%; }
-            .grid-chart { width: 100%; }
-            .hero h1 { font-size: 2.2rem; }
-        }
+    .grid-chart {
+      width: 50%;
+    }
 
-        .section-title {
-            color: #1E3F20;
-            font-size: 2.2rem;
-            border-left: 6px solid #D4AF37;
-            padding-left: 15px;
-            margin-bottom: 30px;
-        }
+    @media (max-width: 768px) {
+      .grid-2 {
+        flex-direction: column;
+      }
 
-        /* GRAPH BLUEPRINT VISUALS */
-        .chart-container {
-            background-color: #FFFFFF;
-            padding: 40px 30px;
-            border-radius: 15px;
-            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-            border: 1px solid #EAEAEA;
-        }
+      .grid-text {
+        width: 100%;
+      }
 
-        .bar-chart {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-around;
-            height: 250px;
-            border-bottom: 3px solid #1E3F20;
-        }
+      .grid-chart {
+        width: 100%;
+      }
 
-        .bar-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 40%;
-        }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
 
-        .bar-seed {
-            width: 100%;
-            height: 15px;
-            background-color: #2D5A35;
-        }
+    .section-title {
+      color: #1E3F20;
+      font-size: 2.2rem;
+      border-left: 6px solid #D4AF37;
+      padding-left: 15px;
+      margin-bottom: 30px;
+    }
 
-        .bar-growth {
-            width: 100%;
-            height: 220px;
-            background-color: #FFD700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-            border: 1px solid #D4AF37;
-        }
+    /* GRAPH BLUEPRINT VISUALS */
+    .chart-container {
+      background-color: #FFFFFF;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid #EAEAEA;
+      box-sizing: border-box;
+    }
 
-        .bar-label {
-            margin-top: 15px;
-            font-weight: bold;
-            color: #1E3F20;
-            text-align: center;
-            font-size: 0.95rem;
-        }
+    .bar-chart {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 260px;
+      border-bottom: 3px solid #1E3F20;
+      padding-top: 20px;
+    }
 
-        .bar-value {
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #2C3E50;
-            font-size: 1.1rem;
-        }
+    .bar-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      width: 40%;
+      height: 100%;
+    }
 
-        /* DYNAMIC FEATURES LAYER */
-        .features {
-            background-color: #ECEFEF;
-            padding: 60px 20px;
-        }
+    .bar-value {
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #2C3E50;
+      font-size: 1.1rem;
+      text-align: center;
+    }
 
-        .feature-grid {
-            display: flex;
-            gap: 30px;
-        }
+    .bar-seed {
+      width: 100%;
+      height: 15px;
+      background-color: #2D5A35;
+    }
 
-        .feature-card {
-            background-color: #FFFFFF;
-            padding: 30px;
-            border-radius: 12px;
-            border-top: 5px solid #2D5A35;
-            width: 50%;
-        }
+    .bar-growth {
+      width: 100%;
+      height: 180px;
+      background-color: #FFD700;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      border: 1px solid #D4AF37;
+    }
 
-        @media (max-width: 768px) {
-            .feature-grid { flex-direction: column; }
-            .feature-card { width: 100%; }
-        }
+    .bar-label {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #1E3F20;
+      text-align: center;
+      font-size: 0.95rem;
+    }
 
-        .badge {
-            background-color: rgba(0,0,0,0.5);
-            color: #FFE57F;
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 20px;
-            border: 1px solid #D4AF37;
-            text-transform: uppercase;
-        }
+    /* DYNAMIC FEATURES LAYER */
+    .features {
+      background-color: #ECEFEF;
+      padding: 60px 20px;
+    }
 
-        /* FOOTER REGISTRY AND LEGAL PROTECTION */
-        footer {
-            background-color: #0B2512;
-            color: #FFFFFF;
-            text-align: center;
-            padding: 60px 20px;
-            border-top: 6px solid #D4AF37;
-        }
+    .feature-grid {
+      display: flex;
+      gap: 30px;
+    }
 
-        .legal-box {
-            font-size: 0.85rem;
-            color: #BACFC0;
-            max-width: 900px;
-            margin: 35px auto 0 auto;
-            padding-top: 25px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            text-align: justify;
-            line-height: 1.6;
-        }
-    </style>
+    .feature-card {
+      background-color: #FFFFFF;
+      padding: 30px;
+      border-radius: 12px;
+      border-top: 5px solid #2D5A35;
+      width: 50%;
+    }
+
+    @media (max-width: 768px) {
+      .feature-grid {
+        flex-direction: column;
+      }
+
+      .feature-card {
+        width: 100%;
+      }
+    }
+
+    .badge {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #FFE57F;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 20px;
+      border: 1px solid #D4AF37;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER REGISTRY AND LEGAL PROTECTION */
+    footer {
+      background-color: #0B2512;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 60px 20px;
+      border-top: 6px solid #D4AF37;
+    }
+
+    .legal-box {
+      font-size: 0.85rem;
+      color: #BACFC0;
+      max-width: 900px;
+      margin: 35px auto 0 auto;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      text-align: justify;
+      line-height: 1.6;
+    }
+  </style>
 </head>
+
 <body>
 
-    <section class="hero">
-        <div class="badge">NOW RELEASED: VERSION 5.2</div>
-        <h1>AVOCADO FINANCIAL GOLD TERMINAL v5.2</h1>
-        <p>More than a spreadsheet. This is a power-driven, modular financial operating software system designed to build, secure, and compound your multi-generational family trust.</p>
-        <a href="https://avocadofinancial.etsy.com" class="cta-button">Secure Your Copy on Etsy</a>
-    </section>
+  <section class="hero">
+    <div class="badge">NOW RELEASED: VERSION 5.2</div>
+    <h1>AVOCADO FINANCIAL GOLD TERMINAL v5.2</h1>
+    <p>More than a spreadsheet. This is a power-driven, modular financial operating software system designed to build,
+      secure, and compound your multi-generational family trust.</p>
+    <a onclick="window.top.location.href='https://avocadofinancial.etsy.com';" class="cta-button">Secure Your Copy on
+      Etsy</a>
+  </section>
 
-    <section class="container">
-        <div class="grid-2">
-            <div class="grid-text">
-                <h2 class="section-title">The Power of the Trunk Trust Seed</h2>
-                <p>True generational wealth does not require a massive initial fortune; it requires an airtight structure and time. The Avocado Gold Terminal v5.2 allows you to simulate, track, and execute precision compounding models for your family plan.</p>
-                <p><strong>Look at the raw math:</strong> A tiny, single investment of just <strong>$500</strong> placed into a Trunk Trust IRA fund—without ever adding another single dollar to it—compounds into approximately <strong>$35,000.00</strong> by the age of 55 (assuming a standard compounding market horizon).</p>
-                <p>Imagine what happens when your family begins dynamically fueling this system using the terminal's automated income-percentage allocation parameters.</p>
+  <section class="container">
+    <div class="grid-2">
+      <div class="grid-text">
+        <h2 class="section-title">The Power of the Trunk Trust Seed</h2>
+        <p>True generational wealth does not require a massive initial fortune; it requires an airtight structure and
+          time. The Avocado Gold Terminal v5.2 allows you to simulate, track, and execute precision compounding models
+          for your family plan.</p>
+        <p><strong>Look at the raw math:</strong> A tiny, single investment of just <strong>$500</strong> placed into a
+          Trunk Trust IRA fund—without ever adding another single dollar to it—compounds into approximately
+          <strong>$35,000.00</strong> by the age of 55 (assuming a standard compounding market horizon).</p>
+        <p>Imagine what happens when your family begins dynamically fueling this system using the terminal's automated
+          income-percentage allocation parameters.</p>
+      </div>
+
+      <div class="grid-chart">
+        <div class="chart-container">
+          <h3 style="text-align: center; margin-top: 0; margin-bottom: 15px; color: #1E3F20; font-size: 1.3rem;">The
+            Compounding Blueprint</h3>
+          <div class="bar-chart">
+            <div class="bar-wrapper">
+              <span class="bar-value">$500</span>
+              <div class="bar-seed"></div>
+              <div class="bar-label">Initial Seed<br>(Age 0)</div>
             </div>
-            
-            <div class="grid-chart">
-                <div class="chart-container">
-                    <h3 style="text-align: center; margin-top: 0; color: #1E3F20; font-size: 1.3rem;">The Compounding Blueprint</h3>
-                    <div class="bar-chart">
-                        <div class="bar-wrapper">
-                            <span class="bar-value">$500</span>
-                            <div class="bar-seed"></div>
-                            <div class="bar-label">Initial Seed<br>(Age 0)</div>
-                        </div>
-                        <div class="bar-wrapper">
-                            <span class="bar-value" style="color: #0B2512; font-weight: bold;">~$35,000</span>
-                            <div class="bar-growth"></div>
-                            <div class="bar-label">Maturity Horizon<br>(Age 55)</div>
-                        </div>
-                    </div>
-                </div>
+            <div class="bar-wrapper">
+              <span class="bar-value" style="color: #0B2512; font-weight: bold;">~$35,000</span>
+              <div class="bar-growth"></div>
+              <div class="bar-label">Maturity Horizon<br>(Age 55)</div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; border: none; padding: 0;">A Complete Dynamic Ecosystem</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem;">You aren't just buying a template. You are unlocking a system backed by continuous digital assistance.</p>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3>Power-Driven Architecture</h3>
-                    <p>Built with robust data-block formulas and modular script logical flows, Version 5.2 changes instantly based on your economic status. Seamlessly shift your trunk contribution percentages from a rigid 50/50 split to custom, floating allocations that dynamically map directly to your changing family income levels.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Your 24/7 Technical Assistant</h3>
-                    <p>Navigate the software platform with complete confidence. Use the free tier of Google Gemini as an instant, interactive technical helpline. Need to troubleshoot a data cell? Want to run a custom forecasting simulation? Gemini acts as an immediate script partner, walking you through every tab and software capability step-by-step.</p>
-                </div>
-            </div>
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center; border: none; padding: 0;">A Complete Dynamic Ecosystem</h2>
+      <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem;">You aren't just
+        buying a template. You are unlocking a system backed by continuous digital assistance.</p>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Power-Driven Architecture</h3>
+          <p>Built with robust data-block formulas and modular script logical flows, Version 5.2 changes instantly based
+            on your economic status. Seamlessly shift your trunk contribution percentages from a rigid 50/50 split to
+            custom, floating allocations that dynamically map directly to your changing family income levels.</p>
         </div>
-    </section>
 
-    <section class="container" style="text-align: center;">
-        <h2 class="section-title" style="display: inline-block; border-left: none; border-bottom: 4px solid #D4AF37; padding-bottom: 10px;">From Digital Strategy to Bulletproof Legal Protection</h2>
-        <p style="max-width: 800px; margin: 30px auto; font-size: 1.1rem; text-align: left;">
-            The Avocado Gold Terminal v5.2 gives you the calculating power to map out critical protective guardrails—such as designing spendthrift provisions that prevent beneficiaries from accessing underlying trust assets until age 55. 
-        </p>
-        <p style="max-width: 800px; margin: 30px auto; font-size: 1.1rem; text-align: left;">
-            Once your dynamic software blueprint is fully mapped on paper, the system lines up your legal path. Take your finalized data sheet straight to highly recommended legal insurance platforms like <strong>LegalShield</strong>, or utilize local estate planning professionals to rapidly formalize your state-specific deeds, avoiding expensive hourly legal discovery fees.
-        </p>
-        <a href="https://avocadofinancial.etsy.com" class="cta-button">Get Started via Etsy Store</a>
-    </section>
-
-    <footer>
-        <p style="font-weight: bold; font-size: 1.2rem; color: #FFE57F; letter-spacing: 0.5px;">Avocado Financial Gold Terminal v5.2</p>
-        <p style="font-size: 1rem; margin-bottom: 5px;">&copy; 2026 David L. Molinari. All Rights Reserved.</p>
-        
-        <div class="legal-box">
-            <strong>LEGAL NOTICE, INTELLECTUAL PROPERTY & DISCLAIMER:</strong> All software architecture, modular script frameworks, calculation methodologies, data-block logic structures, user interface configurations, and compounding forecasting mechanisms embedded within the Avocado Financial Gold Terminal v5.2 are the exclusive intellectual property of and copyrighted under the law by David L. Molinari. This structural environment is provided purely as an interactive mathematical spreadsheet modeling and financial forecasting utility. Interactive AI tool integrations provide non-binding, technical operational walkthroughs for the spreadsheet file environment. This product does not constitute, provide, or substitute for formal investment management, certified bookkeeping, licensed tax advice, or professional legal counsel. All family trust configurations, spendthrift timelines, age restrictions, and capital distributions generated as layouts by this system must be officially evaluated, authorized, and executed by a licensed attorney or certified legal entity in accordance with local state and federal statutes.
+        <div class="feature-card">
+          <h3>Your 24/7 Technical Assistant</h3>
+          <p>Navigate the software platform with complete confidence. Use the free tier of Google Gemini as an instant,
+            interactive technical helpline. Need to troubleshoot a data cell? Want to run a custom forecasting
+            simulation? Gemini acts as an immediate script partner, walking you through every tab and software
+            capability step-by-step.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" style="text-align: center;">
+    <h2 class="section-title"
+      style="display: inline-block; border-left: none; border-bottom: 4px solid #D4AF37; padding-bottom: 10px;">From
+      Digital Strategy to Bulletproof Legal Protection</h2>
+    <p style="max-width: 800px; margin: 30px auto; font-size: 1.1rem; text-align: left;">
+      The Avocado Gold Terminal v5.2 gives you the calculating power to map out critical protective guardrails—such as
+      designing spendthrift provisions that prevent beneficiaries from accessing underlying trust assets until age 55.
+    </p>
+    <p style="max-width: 800px; margin: 30px auto; font-size: 1.1rem; text-align: left;">
+      Once your dynamic software blueprint is fully mapped on paper, the system lines up your legal path. Take your
+      finalized data sheet straight to highly recommended legal insurance platforms like <strong>LegalShield</strong>,
+      or utilize local estate planning professionals to rapidly formalize your state-specific deeds, avoiding expensive
+      hourly legal discovery fees.
+    </p>
+    <a onclick="window.top.location.href='https://avocadofinancial.etsy.com';" class="cta-button">Get Started via Etsy
+      Store</a>
+  </section>
+
+  <footer>
+    <p style="font-weight: bold; font-size: 1.2rem; color: #FFE57F; letter-spacing: 0.5px;">Avocado Financial Gold
+      Terminal v5.2</p>
+    <p style="font-size: 1rem; margin-bottom: 5px;">&copy; 2026 David L. Molinari. All Rights Reserved.</p>
+
+    <div class="legal-box">
+      <strong>LEGAL NOTICE, INTELLECTUAL PROPERTY & DISCLAIMER:</strong> All software architecture, modular script
+      frameworks, calculation methodologies, data-block logic structures, user interface configurations, and compounding
+      forecasting mechanisms embedded within the Avocado Financial Gold Terminal v5.2 are the exclusive intellectual
+      property of and copyrighted under the law by David L. Molinari. This structural environment is provided purely as
+      an interactive mathematical spreadsheet modeling and financial forecasting utility. Interactive AI tool
+      integrations provide non-binding, technical operational walkthroughs for the spreadsheet file environment. This
+      product does not constitute, provide, or substitute for formal investment management, certified bookkeeping,
+      licensed tax advice, or professional legal counsel. All family trust configurations, spendthrift timelines, age
+      restrictions, and capital distributions generated as layouts by this system must be officially evaluated,
+      authorized, and executed by a licensed attorney or certified legal entity in accordance with local state and
+      federal statutes.
+    </div>
+  </footer>
 
 </body>
+
 </html>
